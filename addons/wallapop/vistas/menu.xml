@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->
+    <menuitem id="examen_menu_root" name="Wallapop"/>
+        <menuitem id="menu_estudiante" name="Estudiantes" parent="examen_menu_root" action="estudiante_action"/>
+        <menuitem id="menu_portatiles" name="Portatiles"  parent="examen_menu_root" action="portatil_action"/>        
+        
+</odoo>

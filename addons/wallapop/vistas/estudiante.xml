@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <!--  action window -->
+    <record id="estudiante_action" model="ir.actions.act_window">
+        <field name="name">Estudiantes</field>
+        <field name="res_model">estudiante</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- vista listado -->
+    <record id="estudiante_view_tree" model="ir.ui.view">
+        <field name="name">estudiante.view.tree</field>
+        <field name="model">estudiante</field>
+        <field name="arch" type="xml">
+            <tree string="Listado de estudiantes">
+                <field name="name"/>
+                <field name="dni"/>
+                <field name="email"/>
+                <field name="telefono"/>
+                <field name="laptop"/>
+                <field name="portatil_id" attrs="{'invisible':[('laptop', '=', False)]}" widget="many2many_tags"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- vista formulario -->
+    <record id="estudiante_view_form" model="ir.ui.view">
+        <field name="name">estudiante.view.form</field>
+        <field name="model">estudiante</field>
+        <field name="arch" type="xml">
+            <form string="Estudiante">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="dni"/>
+                        <field name="email"/>
+                        <field name="telefono"/>
+                        <field name="portatil_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+</odoo>
